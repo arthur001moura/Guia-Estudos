@@ -1,0 +1,116 @@
+╔══════════════════════════════════════════════╗
+║              SQL — COLA RÁPIDA               ║
+╠══════════════════════════════════════════════╣
+║                                              ║
+║ ESTRUTURA BÁSICA                             ║
+║ SELECT colunas                               ║
+║ FROM tabela                                  ║
+║ WHERE condição;                              ║
+║                                              ║
+║ EXEMPLO                                      ║
+║ SELECT nome, preco                           ║
+║ FROM produtos                                ║
+║ WHERE preco > 100;                           ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ SELECT                                       ║
+║ Escolhe as COLUNAS que quero visualizar.     ║
+║                                              ║
+║ SELECT *                                     ║
+║ → todas as colunas                           ║
+║                                              ║
+║ SELECT nome, preco                            ║
+║ → somente nome e preço                       ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ FROM                                         ║
+║ Define DE QUAL TABELA vêm os dados.          ║
+║                                              ║
+║ FROM produtos                                ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ WHERE                                        ║
+║ FILTRA AS LINHAS.                            ║
+║                                              ║
+║ WHERE preco > 100                            ║
+║ → preço maior que 100                        ║
+║                                              ║
+║ WHERE estoque = 0                            ║
+║ → estoque igual a 0                         ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ OPERADORES                                   ║
+║                                              ║
+║ =    igual                                   ║
+║ >    maior                                   ║
+║ <    menor                                   ║
+║ >=   maior ou igual                          ║
+║ <=   menor ou igual                          ║
+║ <>   diferente                               ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ AND                                          ║
+║ TODAS as condições precisam ser verdadeiras. ║
+║                                              ║
+║ WHERE preco > 100                            ║
+║ AND estoque > 0                              ║
+║                                              ╠══════════════════════════════════════════════╣
+║ OR                                           ║
+║ PELO MENOS UMA condição precisa ser verdade. ║
+║                                              ║
+║ WHERE preco > 500                            ║
+║ OR estoque = 0                               ║
+║                                              ╠══════════════════════════════════════════════╣
+║ BETWEEN                                      ║
+║ Trabalha com intervalos.                     ║
+║                                              ║
+║ WHERE preco BETWEEN 50 AND 200;              ║
+║                                              ║
+║ → geralmente inclui 50 e 200                 ║
+║                                              ╠══════════════════════════════════════════════╣
+║ IN                                           ║
+║ Compara com várias possibilidades.            ║
+║                                              ║
+║ WHERE categoria IN                           ║
+║ ('Eletrônicos', 'Informática');              ║
+║                                              ╠══════════════════════════════════════════════╣
+║ ORDER BY                                     ║
+║ ORDENA os resultados.                        ║
+║                                              ║
+║ ORDER BY preco ASC                            ║
+║ → menor → maior                              ║
+║                                              ║
+║ ORDER BY preco DESC                           ║
+║ → maior → menor                              ║
+║                                              ╠══════════════════════════════════════════════╣
+║ LIMIT                                        ║
+║ LIMITA a quantidade de resultados.           ║
+║                                              ║
+║ LIMIT 5                                      ║
+║ → mostra somente 5 resultados                ║
+║                                              ╠══════════════════════════════════════════════╣
+║ ORDEM DAS CLÁUSULAS                           ║
+║                                              ║
+║ SELECT                                       ║
+║ FROM                                         ║
+║ WHERE                                        ║
+║ ORDER BY                                     ║
+║ LIMIT                                        ║
+║                                              ╠══════════════════════════════════════════════╣
+║ EXEMPLO COMPLETO                             ║
+║                                              ║
+║ SELECT *                                     ║
+║ FROM produtos                                ║
+║ WHERE preco > 100                            ║
+║ AND estoque > 0                              ║
+║ ORDER BY preco DESC                          ║
+║ LIMIT 10;                                    ║
+║                                              ╠══════════════════════════════════════════════╣
+║ COMO PENSAR                                  ║
+║                                              ║
+║ SELECT    → O QUE quero ver?                 ║
+║ FROM      → DE ONDE?                         ║
+║ WHERE     → QUAIS LINHAS?                    ║
+║ ORDER BY  → COMO ORDENAR?                    ║
+║ LIMIT     → QUANTOS?                         ║
+╚══════════════════════════════════════════════╝
