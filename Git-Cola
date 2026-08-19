@@ -1,0 +1,40 @@
+╔══════════════════════════════════════╗
+║           GIT — COLA RÁPIDA          ║
+╠══════════════════════════════════════╣
+║                                      ║
+║ VER O ESTADO                         ║
+║ git status                           ║
+║                                      ║
+║ PREPARAR ALTERAÇÕES                  ║
+║ git add .                            ║
+║                                      ║
+║ SALVAR NO HISTÓRICO                  ║
+║ git commit -m "mensagem"             ║
+║                                      ║
+║ ENVIAR PARA GITHUB                   ║
+║ git push                             ║
+║                                      ║
+║ BAIXAR DO GITHUB                     ║
+║ git pull                             ║
+║                                      ║
+║ CLONAR PROJETO                       ║
+║ git clone URL                        ║
+║                                      ║
+║ CRIAR BRANCH                         ║
+║ git switch -c nome                   ║
+║                                      ║
+║ TROCAR DE BRANCH                     ║
+║ git switch nome                      ║
+║                                      ║
+║ VER BRANCHES                         ║
+║ git branch                           ║
+║                                      ║
+║ JUNTAR BRANCHES                      ║
+║ git merge nome                       ║
+║                                      ║
+║ VER HISTÓRICO                        ║
+║ git log --oneline                    ║
+║                                      ║
+║ VER REMOTO                           ║
+║ git remote -v                        ║
+╚══════════════════════════════════════╝
