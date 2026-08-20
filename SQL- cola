@@ -19,7 +19,7 @@
 ║ SELECT *                                     ║
 ║ → todas as colunas                           ║
 ║                                              ║
-║ SELECT nome, preco                            ║
+║ SELECT nome, preco                           ║
 ║ → somente nome e preço                       ║
 ║                                              ║
 ╠══════════════════════════════════════════════╣
@@ -36,7 +36,7 @@
 ║ → preço maior que 100                        ║
 ║                                              ║
 ║ WHERE estoque = 0                            ║
-║ → estoque igual a 0                         ║
+║ → estoque igual a 0                          ║
 ║                                              ║
 ╠══════════════════════════════════════════════╣
 ║ OPERADORES                                   ║
@@ -49,54 +49,55 @@
 ║ <>   diferente                               ║
 ║                                              ║
 ╠══════════════════════════════════════════════╣
+║ COMPLEMENTO DA BASE                          ║
+║                                              ║
 ║ AND                                          ║
 ║ TODAS as condições precisam ser verdadeiras. ║
 ║                                              ║
 ║ WHERE preco > 100                            ║
 ║ AND estoque > 0                              ║
-║                                              ╠══════════════════════════════════════════════╣
+║                                              ╠
 ║ OR                                           ║
 ║ PELO MENOS UMA condição precisa ser verdade. ║
 ║                                              ║
 ║ WHERE preco > 500                            ║
 ║ OR estoque = 0                               ║
-║                                              ╠══════════════════════════════════════════════╣
+║                                              ╠
 ║ BETWEEN                                      ║
 ║ Trabalha com intervalos.                     ║
 ║                                              ║
 ║ WHERE preco BETWEEN 50 AND 200;              ║
 ║                                              ║
-║ → geralmente inclui 50 e 200                 ║
-║                                              ╠══════════════════════════════════════════════╣
+║ → inclui 50 e 200                            ║
+║                                              ╠
 ║ IN                                           ║
-║ Compara com várias possibilidades.            ║
+║ Compara com várias possibilidades.           ║
 ║                                              ║
 ║ WHERE categoria IN                           ║
 ║ ('Eletrônicos', 'Informática');              ║
-║                                              ╠══════════════════════════════════════════════╣
+║                                              ╠
 ║ ORDER BY                                     ║
 ║ ORDENA os resultados.                        ║
 ║                                              ║
-║ ORDER BY preco ASC                            ║
+║ ORDER BY preco ASC                           ║
 ║ → menor → maior                              ║
 ║                                              ║
-║ ORDER BY preco DESC                           ║
+║ ORDER BY preco DESC                          ║
 ║ → maior → menor                              ║
-║                                              ╠══════════════════════════════════════════════╣
+║                                              ╠
 ║ LIMIT                                        ║
 ║ LIMITA a quantidade de resultados.           ║
 ║                                              ║
-║ LIMIT 5                                      ║
-║ → mostra somente 5 resultados                ║
-║                                              ╠══════════════════════════════════════════════╣
-║ ORDEM DAS CLÁUSULAS                           ║
+║ LIMIT 5 → mostra somente 5 resultados        ║                                           
+║══════════════════════════════════════════════╠
+║ ORDEM DAS CLÁUSULAS                          ║
 ║                                              ║
 ║ SELECT                                       ║
 ║ FROM                                         ║
 ║ WHERE                                        ║
 ║ ORDER BY                                     ║
 ║ LIMIT                                        ║
-║                                              ╠══════════════════════════════════════════════╣
+║                                              ╠
 ║ EXEMPLO COMPLETO                             ║
 ║                                              ║
 ║ SELECT *                                     ║
@@ -105,7 +106,7 @@
 ║ AND estoque > 0                              ║
 ║ ORDER BY preco DESC                          ║
 ║ LIMIT 10;                                    ║
-║                                              ╠══════════════════════════════════════════════╣
+║                                              ╠
 ║ COMO PENSAR                                  ║
 ║                                              ║
 ║ SELECT    → O QUE quero ver?                 ║
@@ -113,4 +114,31 @@
 ║ WHERE     → QUAIS LINHAS?                    ║
 ║ ORDER BY  → COMO ORDENAR?                    ║
 ║ LIMIT     → QUANTOS?                         ║
-╚══════════════════════════════════════════════╝
+║══════════════════════════════════════════════║
+║ FUNÇÕES DE AGREGAÇÃO                         ║
+║                                              ║ 
+║ SELECT COUNT(*) → Quantos produtos existem?  ║ 
+║ FROM produtos                                ║
+║                                              ║
+║ SELECT SUM(preco) → Qual é a SOMA dos preco? ║
+║                                              ║                                              
+║ SELECT AVG(preco) → Qual é a média dos precos║
+║                                              ║
+║ SELECT MIN(preco) → Qual é o valor mínimo?   ║
+║                                              ║
+║ SELECT MAX(preco) → Qual o valor máximo?     ║
+║══════════════════════════════════════════════║
+║ DICAS(AGREGAÇÃO)                             ║
+║                                              ║
+║COUNT(*) → Posso contar todas as linhas       ║
+║SUM(coluna) → Preciso indicar uma coluna      ║
+║AVG(coluna) → Preciso indicar uma coluna      ║
+║MIN(coluna) → Preciso indicar uma coluna      ║
+║MAX(coluna) → Preciso indicar uma coluna      ║
+║══════════════════════════════════════════════║
+║EXEMPLO ESTRUTURA AGREGAÇÃO + BASE            ║
+║                                              ║
+║ SELECT MAX(preco)                            ║
+║ FROM produtos                                ║
+║ WHERE estoque > 0;                           ║
+║══════════════════════════════════════════════║
