@@ -18,6 +18,7 @@ São guias rápidos baseados no que estou estudando e, principalmente, no que fu
 Esse repositório vai sendo atualizado conforme eu avanço nos estudos.
 
 Então provavelmente vai ter coisa simples, coisa que eu ainda estou aprendendo e algumas anotações que podem mudar com o tempo ou que estão erradas.
+
 ---
 
 ### ⚠️ Observação
