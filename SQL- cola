@@ -142,3 +142,38 @@
 ║ FROM produtos                                ║
 ║ WHERE estoque > 0;                           ║
 ║══════════════════════════════════════════════║
+║ INNER JOIN                                   ║
+║ Junta linhas de duas tabelas quando existe   ║
+║ correspondência entre elas.                  ║
+║                                              ║
+║ SELECT pedidos.id, clientes.nome             ║
+║ FROM pedidos                                 ║
+║ INNER JOIN clientes                          ║
+║ ON pedidos.cliente_id = clientes.id;         ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ COMO PENSAR (INNER JOIN)                     ║
+║                                              ║
+║ INNER JOIN → só traz o que existe NOS DOIS   ║
+║ lados (tabela A e tabela B) ao mesmo tempo.  ║
+╠══════════════════════════════════════════════╣
+║ HAVING                                       ║
+║ FILTRA GRUPOS, depois do GROUP BY.           ║
+║                                              ║
+║ SELECT categoria, COUNT(*)                   ║
+║ FROM produtos                                ║
+║ GROUP BY categoria                           ║
+║ HAVING COUNT(*) > 5;                         ║
+║                                              ║
+║ EXEMPLO 2                                    ║
+║                                              ║
+║ SELECT categoria, AVG(preco)                 ║
+║ FROM produtos                                ║
+║ GROUP BY categoria                           ║
+║ HAVING AVG(preco) > 100;                     ║
+╠══════════════════════════════════════════════╣
+║ DIFERENÇA WHERE x HAVING                     ║
+║                                              ║
+║ WHERE  → filtra ANTES de agrupar (linhas)    ║
+║ HAVING → filtra DEPOIS de agrupar (grupos)   ║
+╚══════════════════════════════════════════════╝
