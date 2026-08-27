@@ -1,0 +1,179 @@
+╔══════════════════════════════════════════════╗
+║              SQL — COLA RÁPIDA               ║
+╠══════════════════════════════════════════════╣
+║                                              ║
+║ ESTRUTURA BÁSICA                             ║
+║ SELECT colunas                               ║
+║ FROM tabela                                  ║
+║ WHERE condição;                              ║
+║                                              ║
+║ EXEMPLO                                      ║
+║ SELECT nome, preco                           ║
+║ FROM produtos                                ║
+║ WHERE preco > 100;                           ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ SELECT                                       ║
+║ Escolhe as COLUNAS que quero visualizar.     ║
+║                                              ║
+║ SELECT *                                     ║
+║ → todas as colunas                           ║
+║                                              ║
+║ SELECT nome, preco                           ║
+║ → somente nome e preço                       ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ FROM                                         ║
+║ Define DE QUAL TABELA vêm os dados.          ║
+║                                              ║
+║ FROM produtos                                ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ WHERE                                        ║
+║ FILTRA AS LINHAS.                            ║
+║                                              ║
+║ WHERE preco > 100                            ║
+║ → preço maior que 100                        ║
+║                                              ║
+║ WHERE estoque = 0                            ║
+║ → estoque igual a 0                          ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ OPERADORES                                   ║
+║                                              ║
+║ =    igual                                   ║
+║ >    maior                                   ║
+║ <    menor                                   ║
+║ >=   maior ou igual                          ║
+║ <=   menor ou igual                          ║
+║ <>   diferente                               ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ COMPLEMENTO DA BASE                          ║
+║                                              ║
+║ AND                                          ║
+║ TODAS as condições precisam ser verdadeiras. ║
+║                                              ║
+║ WHERE preco > 100                            ║
+║ AND estoque > 0                              ║
+║                                              ╠
+║ OR                                           ║
+║ PELO MENOS UMA condição precisa ser verdade. ║
+║                                              ║
+║ WHERE preco > 500                            ║
+║ OR estoque = 0                               ║
+║                                              ╠
+║ BETWEEN                                      ║
+║ Trabalha com intervalos.                     ║
+║                                              ║
+║ WHERE preco BETWEEN 50 AND 200;              ║
+║                                              ║
+║ → inclui 50 e 200                            ║
+║                                              ╠
+║ IN                                           ║
+║ Compara com várias possibilidades.           ║
+║                                              ║
+║ WHERE categoria IN                           ║
+║ ('Eletrônicos', 'Informática');              ║
+║                                              ╠
+║ ORDER BY                                     ║
+║ ORDENA os resultados.                        ║
+║                                              ║
+║ ORDER BY preco ASC                           ║
+║ → menor → maior                              ║
+║                                              ║
+║ ORDER BY preco DESC                          ║
+║ → maior → menor                              ║
+║                                              ╠
+║ LIMIT                                        ║
+║ LIMITA a quantidade de resultados.           ║
+║                                              ║
+║ LIMIT 5 → mostra somente 5 resultados        ║
+║══════════════════════════════════════════════╠
+║ ORDEM DAS CLÁUSULAS                          ║
+║                                              ║
+║ SELECT                                       ║
+║ FROM                                         ║
+║ WHERE                                        ║
+║ ORDER BY                                     ║
+║ LIMIT                                        ║
+║                                              ╠
+║ EXEMPLO COMPLETO                             ║
+║                                              ║
+║ SELECT *                                     ║
+║ FROM produtos                                ║
+║ WHERE preco > 100                            ║
+║ AND estoque > 0                              ║
+║ ORDER BY preco DESC                          ║
+║ LIMIT 10;                                    ║
+║                                              ╠
+║ COMO PENSAR                                  ║
+║                                              ║
+║ SELECT    → O QUE quero ver?                 ║
+║ FROM      → DE ONDE?                         ║
+║ WHERE     → QUAIS LINHAS?                    ║
+║ ORDER BY  → COMO ORDENAR?                    ║
+║ LIMIT     → QUANTOS?                         ║
+║══════════════════════════════════════════════║
+║ FUNÇÕES DE AGREGAÇÃO                         ║
+║                                              ║
+║ SELECT COUNT(*) → Quantos produtos existem?  ║
+║ FROM produtos                                ║
+║                                              ║
+║ SELECT SUM(preco) → Qual é a SOMA dos preco? ║
+║                                              ║
+║ SELECT AVG(preco) → Qual é a média dos precos║
+║                                              ║
+║ SELECT MIN(preco) → Qual é o valor mínimo?   ║
+║                                              ║
+║ SELECT MAX(preco) → Qual o valor máximo?     ║
+║══════════════════════════════════════════════║
+║ DICAS(AGREGAÇÃO)                             ║
+║                                              ║
+║COUNT(*) → Posso contar todas as linhas       ║
+║SUM(coluna) → Preciso indicar uma coluna      ║
+║AVG(coluna) → Preciso indicar uma coluna      ║
+║MIN(coluna) → Preciso indicar uma coluna      ║
+║MAX(coluna) → Preciso indicar uma coluna      ║
+║══════════════════════════════════════════════║
+║EXEMPLO ESTRUTURA AGREGAÇÃO + BASE            ║
+║                                              ║
+║ SELECT MAX(preco)                            ║
+║ FROM produtos                                ║
+║ WHERE estoque > 0;                           ║
+║══════════════════════════════════════════════║
+║ INNER JOIN                                   ║
+║ Junta linhas de duas tabelas quando existe   ║
+║ correspondência entre elas.                  ║
+║                                              ║
+║ SELECT pedidos.id, clientes.nome             ║
+║ FROM pedidos                                 ║
+║ INNER JOIN clientes                          ║
+║ ON pedidos.cliente_id = clientes.id;         ║
+║                                              ║
+╠══════════════════════════════════════════════╣
+║ COMO PENSAR (INNER JOIN)                     ║
+║                                              ║
+║ INNER JOIN → só traz o que existe NOS DOIS   ║
+║ lados (tabela A e tabela B) ao mesmo tempo.  ║
+╠══════════════════════════════════════════════╣
+║ HAVING                                       ║
+║ FILTRA GRUPOS, depois do GROUP BY.           ║
+║                                              ║
+║ SELECT categoria, COUNT(*)                   ║
+║ FROM produtos                                ║
+║ GROUP BY categoria                           ║
+║ HAVING COUNT(*) > 5;                         ║
+║                                              ║
+║ EXEMPLO 2                                    ║
+║                                              ║
+║ SELECT categoria, AVG(preco)                 ║
+║ FROM produtos                                ║
+║ GROUP BY categoria                           ║
+║ HAVING AVG(preco) > 100;                     ║
+╠══════════════════════════════════════════════╣
+║ DIFERENÇA WHERE x HAVING                     ║
+║                                              ║
+║ WHERE  → filtra ANTES de agrupar (linhas)    ║
+║ HAVING → filtra DEPOIS de agrupar (grupos)   ║
+╚══════════════════════════════════════════════╝

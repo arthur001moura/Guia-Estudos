@@ -1,0 +1,87 @@
+╔══════════════════════════════════════════════╗
+║         DBEAVER E CRIAÇÃO DE TABELAS         ║
+╠══════════════════════════════════════════════╣
+║                                              ║
+║ O QUE É O DBEAVER?                           ║
+║                                              ║
+║ É um programa (cliente de banco de dados)    ║
+║ que a gente usa pra ENXERGAR e MEXER no      ║
+║ banco de dados de um jeito visual.           ║
+║                                              ║
+║ Em vez de ficar só no terminal escuro        ║
+║ digitando comando, o DBeaver te mostra as    ║
+║ tabelas, colunas e dados numa interface       ║
+║ tipo planilha — e ainda tem um espaço pra    ║
+║ você escrever e rodar seus comandos SQL.     ║
+║                                              ║
+║ Resumindo: é a ferramenta que conecta você   ║
+║ no banco e deixa tudo mais visual e fácil    ║
+║ de mexer no dia a dia.                       ║
+║                                              ╠
+║ CREATE TABLE                                 ║
+║ Cria uma tabela nova dentro do banco.        ║
+║                                              ║
+║ CREATE TABLE clientes (                      ║
+║     id INTEGER PRIMARY KEY,                  ║
+║     nome VARCHAR,                            ║
+║     email VARCHAR                            ║
+║ );                                           ║
+║                                              ║
+║ → aqui a gente tá dizendo: "cria uma tabela  ║
+║ chamada clientes, com 3 colunas: id, nome    ║
+║ e email".                                    ║
+║                                              ╠
+║ E CRIAMOS...                                 ║
+║                                              ║
+║ Depois de rodar uns CREATE TABLE parecidos   ║
+║ com esse (um pra clientes, outro pra         ║
+║ produtos, outro pra vendas), o banco fica    ║
+║ organizado mais ou menos assim:              ║
+║                                              ║
+║ projeto_vendas                               ║
+║ ├── clientes                                 ║
+║ ├── produtos                                 ║
+║ └── vendas                                   ║
+║                                              ║
+║ → cada uma dessas é uma tabela dentro do     ║
+║ mesmo banco de dados (projeto_vendas).       ║
+║                                              ╠
+║ TIPOS DE DADOS                               ║
+║ Toda coluna precisa dizer QUE TIPO de dado   ║
+║ ela vai guardar.                             ║
+║                                              ║
+║ INTEGER      → números inteiros              ║
+║ VARCHAR      → texto                         ║
+║ DECIMAL      → números com casas decimais    ║
+║ PRIMARY KEY  → identificador único da tabela ║
+║                                              ║
+║ EXEMPLO                                      ║
+║                                              ║
+║ CREATE TABLE produtos (                      ║
+║     id INTEGER PRIMARY KEY,                  ║
+║     nome VARCHAR,                            ║
+║     preco DECIMAL                            ║
+║ );                                           ║
+║                                              ╠
+║ O FLUXO COMPLETO                             ║
+║ Do zero até consultar os dados, a ordem      ║
+║ normal é essa:                               ║
+║                                              ║
+║ CREATE TABLE                                 ║
+║       ↓                                      ║
+║ a estrutura existe                           ║
+║       ↓                                      ║
+║ INSERT INTO                                  ║
+║       ↓                                      ║
+║ colocamos dados dentro                       ║
+║       ↓                                      ║
+║ SELECT                                       ║
+║       ↓                                      ║
+║ consultamos os dados                         ║
+║                                              ╠
+║ COMO PENSAR                                  ║
+║                                              ║
+║ CREATE TABLE → "vou construir a casa"        ║
+║ INSERT INTO  → "vou mobiliar a casa"         ║
+║ SELECT       → "vou dar uma olhada dentro"   ║
+╚══════════════════════════════════════════════╝
